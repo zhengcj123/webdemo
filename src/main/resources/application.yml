@@ -1,0 +1,29 @@
+server:
+  port: 8080
+spring:
+  # 数据库相关配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 这里加上后缀用来防止mysql乱码,serverTimezone=GMT%2b8设置时区
+    url: ENC(XRX8eZnUDhD/fQDpa7E4gy7h8ubM/Eem1jawU014onz2dZFmW+6toVajsHigh+6GqPOizyN8JvYmDFgN9OEVW6kSjDecuRjC7fjIpZerV3O0vXd7HlsQWcJDolDXckNQlme6YiC4OBeH6JHrkmKeK/rMJqmLZj4TJ4XI/8c3jm8=)
+    username: ENC(Gnyix1PvbDWdKgrhGcWX8A==)
+    password: ENC(TVXsdy+PU7Yt2Ye5n/0CXA==)
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/**/*.xml
+  type-aliases-package: com.zhengcj.webdemo.entity.po
+  type-enums-package: com.zhengcj.webdemo.entity.enums.*
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+# jasypt加密的密匙
+jasypt:
+  encryptor:
+    password: dcsyun2021
+
+# java -jar xxx.jar  -D jasypt.encryptor.password=dcsyun2021
+
